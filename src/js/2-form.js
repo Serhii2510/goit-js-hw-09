@@ -1,10 +1,10 @@
 const form = document.querySelector('.feedback-form');
-const email = form.elements.email;
-const message = form.elements.message;
+const email = document.querySelector('input');
+const message = document.querySelector('textarea');
 const keyLS = "feedback-form-state";
-const formData = JSON.parse(localStorage.getItem(keyLS)) ?? { email, message };
-email.value = formData?.email ?? '';
-message.value = formData?.message ?? '';
+const formData = JSON.parse(localStorage.getItem(keyLS)) ?? { email:'', message:'' };
+email.value = formData.email ?? '';
+message.value = formData.message ?? '';
 
 form.addEventListener('input', () => {
     formData.email = email.value;
