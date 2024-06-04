@@ -7,8 +7,8 @@ email.value = formData.email ?? '';
 message.value = formData.message ?? '';
 
 form.addEventListener('input', () => {
-    formData.email = email.value;
-    formData.message = message.value;
+    formData.email = email.value.trim();
+    formData.message = message.value.trim();
     const jsonData = JSON.stringify(formData);
     localStorage.setItem(keyLS, jsonData);
 });
